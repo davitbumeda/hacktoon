@@ -13,7 +13,7 @@ export function SignupProvider({ children }: { children: ReactNode }) {
 }
 
 export function pageHead(title: string, description: string) {
-  return { meta: [{ title: `${title} | HACKTOON` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} | HACKTOON` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] };
+  return { meta: [{ title: `${title} | HACKTOON` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} | HACKTOON` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }, ...(title !== 'Verificação do organizador' && mascot.url.startsWith('https://') ? [{ property: 'og:image', content: mascot.url }, { name: 'twitter:image', content: mascot.url }] : [])] };
 }
 
 function Header() {
