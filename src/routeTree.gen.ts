@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CadastrarOrganizadorRouteImport } from './routes/cadastrar-organizador'
+import { Route as CadastrarParticipanteRouteImport } from './routes/cadastrar-participante'
+import { Route as CriarContaRouteImport } from './routes/criar-conta'
+import { Route as EntrarRouteImport } from './routes/entrar'
+import { Route as OrganizadorEquipeRouteImport } from './routes/organizador-equipe'
+import { Route as ParticipantePerfilRouteImport } from './routes/participante-perfil'
+import { Route as VerificacaoRouteImport } from './routes/verificacao'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CadastrarOrganizadorRoute = CadastrarOrganizadorRouteImport.update({
+  id: '/cadastrar-organizador',
+  path: '/cadastrar-organizador',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastrarParticipanteRoute = CadastrarParticipanteRouteImport.update({
+  id: '/cadastrar-participante',
+  path: '/cadastrar-participante',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CriarContaRoute = CriarContaRouteImport.update({
+  id: '/criar-conta',
+  path: '/criar-conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizadorEquipeRoute = OrganizadorEquipeRouteImport.update({
+  id: '/organizador-equipe',
+  path: '/organizador-equipe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParticipantePerfilRoute = ParticipantePerfilRouteImport.update({
+  id: '/participante-perfil',
+  path: '/participante-perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificacaoRoute = VerificacaoRouteImport.update({
+  id: '/verificacao',
+  path: '/verificacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cadastrar-organizador': typeof CadastrarOrganizadorRoute
+  '/cadastrar-participante': typeof CadastrarParticipanteRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
+  '/organizador-equipe': typeof OrganizadorEquipeRoute
+  '/participante-perfil': typeof ParticipantePerfilRoute
+  '/verificacao': typeof VerificacaoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cadastrar-organizador': typeof CadastrarOrganizadorRoute
+  '/cadastrar-participante': typeof CadastrarParticipanteRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
+  '/organizador-equipe': typeof OrganizadorEquipeRoute
+  '/participante-perfil': typeof ParticipantePerfilRoute
+  '/verificacao': typeof VerificacaoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cadastrar-organizador': typeof CadastrarOrganizadorRoute
+  '/cadastrar-participante': typeof CadastrarParticipanteRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
+  '/organizador-equipe': typeof OrganizadorEquipeRoute
+  '/participante-perfil': typeof ParticipantePerfilRoute
+  '/verificacao': typeof VerificacaoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cadastrar-organizador'
+    | '/cadastrar-participante'
+    | '/criar-conta'
+    | '/entrar'
+    | '/organizador-equipe'
+    | '/participante-perfil'
+    | '/verificacao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cadastrar-organizador'
+    | '/cadastrar-participante'
+    | '/criar-conta'
+    | '/entrar'
+    | '/organizador-equipe'
+    | '/participante-perfil'
+    | '/verificacao'
+  id:
+    | '__root__'
+    | '/'
+    | '/cadastrar-organizador'
+    | '/cadastrar-participante'
+    | '/criar-conta'
+    | '/entrar'
+    | '/organizador-equipe'
+    | '/participante-perfil'
+    | '/verificacao'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CadastrarOrganizadorRoute: typeof CadastrarOrganizadorRoute
+  CadastrarParticipanteRoute: typeof CadastrarParticipanteRoute
+  CriarContaRoute: typeof CriarContaRoute
+  EntrarRoute: typeof EntrarRoute
+  OrganizadorEquipeRoute: typeof OrganizadorEquipeRoute
+  ParticipantePerfilRoute: typeof ParticipantePerfilRoute
+  VerificacaoRoute: typeof VerificacaoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastrar-organizador': {
+      id: '/cadastrar-organizador'
+      path: '/cadastrar-organizador'
+      fullPath: '/cadastrar-organizador'
+      preLoaderRoute: typeof CadastrarOrganizadorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastrar-participante': {
+      id: '/cadastrar-participante'
+      path: '/cadastrar-participante'
+      fullPath: '/cadastrar-participante'
+      preLoaderRoute: typeof CadastrarParticipanteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/criar-conta': {
+      id: '/criar-conta'
+      path: '/criar-conta'
+      fullPath: '/criar-conta'
+      preLoaderRoute: typeof CriarContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organizador-equipe': {
+      id: '/organizador-equipe'
+      path: '/organizador-equipe'
+      fullPath: '/organizador-equipe'
+      preLoaderRoute: typeof OrganizadorEquipeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/participante-perfil': {
+      id: '/participante-perfil'
+      path: '/participante-perfil'
+      fullPath: '/participante-perfil'
+      preLoaderRoute: typeof ParticipantePerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verificacao': {
+      id: '/verificacao'
+      path: '/verificacao'
+      fullPath: '/verificacao'
+      preLoaderRoute: typeof VerificacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CadastrarOrganizadorRoute: CadastrarOrganizadorRoute,
+  CadastrarParticipanteRoute: CadastrarParticipanteRoute,
+  CriarContaRoute: CriarContaRoute,
+  EntrarRoute: EntrarRoute,
+  OrganizadorEquipeRoute: OrganizadorEquipeRoute,
+  ParticipantePerfilRoute: ParticipantePerfilRoute,
+  VerificacaoRoute: VerificacaoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
